@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{AB1E54A3-0312-4ECB-ACB7-0A3B95DADC80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{DEDFFCB5-E54F-4D2F-B7AA-9E963889411E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{ED62E5FD-E226-419F-AB1B-764E69995CE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB1E54A3-0312-4ECB-ACB7-0A3B95DADC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1E54A3-0312-4ECB-ACB7-0A3B95DADC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1E54A3-0312-4ECB-ACB7-0A3B95DADC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1E54A3-0312-4ECB-ACB7-0A3B95DADC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDFFCB5-E54F-4D2F-B7AA-9E963889411E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDFFCB5-E54F-4D2F-B7AA-9E963889411E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDFFCB5-E54F-4D2F-B7AA-9E963889411E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDFFCB5-E54F-4D2F-B7AA-9E963889411E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED62E5FD-E226-419F-AB1B-764E69995CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED62E5FD-E226-419F-AB1B-764E69995CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED62E5FD-E226-419F-AB1B-764E69995CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED62E5FD-E226-419F-AB1B-764E69995CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA74EC7B-000C-47F0-8D91-846462031067}
+	EndGlobalSection
+EndGlobal
