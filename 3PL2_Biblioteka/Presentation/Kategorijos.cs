@@ -34,5 +34,11 @@ namespace Presentation
 				dataGridViewKategorijos["clmnAmžiausCenzūra", eilutė].Value = kategorija.AmžiausCenzūra;
 			}
 		}
+
+		private void btnNaujaKategorija_Click(object sender, EventArgs e)
+		{
+			NaujaKategorija naujaKategorija = new();
+			naujaKategorija.ShowDialog();
+		}
 	}
 }

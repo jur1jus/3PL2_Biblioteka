@@ -22,11 +22,12 @@ namespace Services
 					var reader = command.ExecuteReader();
 
 					while (reader.Read()) {
-						var kategorija = new Kategorija {
-							Id = reader.GetInt32("Id"),
-							Pavadinimas = reader.GetString("Pavadinimas"),
-							AmžiausCenzūra = !reader.IsDBNull(2) ? reader.GetInt32("AmžiausCenzūra") : (int?)null
-						};
+
+						var id = reader.GetInt32("Id");
+						var pavadinimas = reader.GetString("Pavadinimas");
+						var amžiausCenzūra = !reader.IsDBNull(2) ? reader.GetInt32("AmžiausCenzūra") : (int?)null;
+
+						Kategorija kategorija = new(id, pavadinimas, amžiausCenzūra);
 						kategorijosResult.Add(kategorija);
 					}
 				} catch {
@@ -34,6 +35,20 @@ namespace Services
 					throw;
 				}
 			return kategorijosResult;
+		}
+
+		public void SukurkKategorija(FormModels.Kategorija kategorija)
+		{
+			Domain.Letenlės.Kategorija dbKategorija = new(kategorija.Pavadinimas, kategorija.AmžiausCenzūra);
+
+			using (MySqlConnection connection = new(ConnString))
+			using (MySqlCommand command = new(dbKategorija.GeneruokInsertKomandą(), connection))
+				try {
+					connection.Open();
+					command.ExecuteNonQuery();
+				} catch {
+					throw;
+				}
 		}
 	}
 }

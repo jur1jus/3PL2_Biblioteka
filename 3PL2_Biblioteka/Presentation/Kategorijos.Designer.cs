@@ -32,7 +32,7 @@ namespace Presentation
 			this.clmnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.clmnPavadinimas = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.clmnAmžiausCenzūra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnNaujaKategorija = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorijos)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -72,21 +72,22 @@ namespace Presentation
 			this.clmnAmžiausCenzūra.Name = "clmnAmžiausCenzūra";
 			this.clmnAmžiausCenzūra.ReadOnly = true;
 			// 
-			// button1
+			// btnNaujaKategorija
 			// 
-			this.button1.Location = new System.Drawing.Point(154, 13);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(127, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnNaujaKategorija.Location = new System.Drawing.Point(154, 13);
+			this.btnNaujaKategorija.Name = "btnNaujaKategorija";
+			this.btnNaujaKategorija.Size = new System.Drawing.Size(127, 23);
+			this.btnNaujaKategorija.TabIndex = 1;
+			this.btnNaujaKategorija.Text = "Nauja kategorija";
+			this.btnNaujaKategorija.UseVisualStyleBackColor = true;
+			this.btnNaujaKategorija.Click += new System.EventHandler(this.btnNaujaKategorija_Click);
 			// 
 			// Kategorijos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(293, 264);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnNaujaKategorija);
 			this.Controls.Add(this.dataGridViewKategorijos);
 			this.Name = "Kategorijos";
 			this.Text = "Kategorijos";
@@ -101,6 +102,6 @@ namespace Presentation
 		private System.Windows.Forms.DataGridViewTextBoxColumn clmnId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn clmnPavadinimas;
 		private System.Windows.Forms.DataGridViewTextBoxColumn clmnAmžiausCenzūra;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnNaujaKategorija;
 	}
 }

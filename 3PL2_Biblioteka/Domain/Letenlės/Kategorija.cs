@@ -13,5 +13,25 @@ namespace Domain.Letenlės
 		public string Pavadinimas { get; set; }
 
 		public int? AmžiausCenzūra { get; set; }
+
+		public Kategorija(int id, string pavadinimas, int? amžiausCenzūra)
+		{
+			Id = id;
+			Pavadinimas = pavadinimas;
+			AmžiausCenzūra = amžiausCenzūra;
+		}
+
+		public Kategorija(string pavadinimas, int? amžiausCenzūra)
+		{
+			Pavadinimas = pavadinimas;
+			AmžiausCenzūra = amžiausCenzūra;
+		}
+
+		public string GeneruokInsertKomandą()
+		{
+			var pavadinimas = string.IsNullOrEmpty(Pavadinimas) ? "NULL" : $"'{Pavadinimas}'";
+			var amžiausCenzūra = !AmžiausCenzūra.HasValue ? "NULL" : AmžiausCenzūra.ToString();
+			return $"INSERT INTO Kategorijos (Pavadinimas, AmžiausCenzūra) VALUES ({pavadinimas}, {amžiausCenzūra})";
+		}
 	}
 }
