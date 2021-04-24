@@ -44,8 +44,21 @@ namespace Presentation
 		private void dataGridViewKategorijos_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 3) {
-				MessageBox.Show("Redaguok");
+				var id = (int)dataGridViewKategorijos["clmnId", e.RowIndex].Value;
+				var pavadinimas = dataGridViewKategorijos["clmnPavadinimas", e.RowIndex].Value?.ToString();
+				var amžiausCenzūra = dataGridViewKategorijos["clmnAmžiausCenzūra", e.RowIndex].Value is not null ? (int?)dataGridViewKategorijos["clmnAmžiausCenzūra", e.RowIndex].Value : (int?)null;
+
+				Services.FormModels.Kategorija kategorija = new(id, pavadinimas, amžiausCenzūra);
+
+				KategorijosRedagavimas kategorijosRedagavimas = new(kategorija);
+				kategorijosRedagavimas.FormClosed += KategorijosRedagavimas_FormClosed;
+				kategorijosRedagavimas.Show();
 			}
+		}
+
+		private void KategorijosRedagavimas_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			UžpildykDataGridView();
 		}
 	}
 }

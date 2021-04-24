@@ -33,5 +33,14 @@ namespace Domain.Letenlės
 			var amžiausCenzūra = !AmžiausCenzūra.HasValue ? "NULL" : AmžiausCenzūra.ToString();
 			return $"INSERT INTO Kategorijos (Pavadinimas, AmžiausCenzūra) VALUES ({pavadinimas}, {amžiausCenzūra})";
 		}
+
+		public string GeneruokUpdateKomandą()
+		{
+			var id = Id;
+			var pavadinimas = string.IsNullOrEmpty(Pavadinimas) ? "NULL" : $"'{Pavadinimas}'";
+			var amžiausCenzūra = !AmžiausCenzūra.HasValue ? "NULL" : AmžiausCenzūra.ToString();
+
+			return $"UPDATE Kategorijos SET Pavadinimas = {pavadinimas}, AmžiausCenzūra = {amžiausCenzūra} WHERE Id = {id}";
+		}
 	}
 }

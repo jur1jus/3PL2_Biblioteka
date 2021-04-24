@@ -83,6 +83,7 @@ namespace Presentation
 			this.btnRedaguoti.TabIndex = 5;
 			this.btnRedaguoti.Text = "Redaguoti";
 			this.btnRedaguoti.UseVisualStyleBackColor = true;
+			this.btnRedaguoti.Click += new System.EventHandler(this.btnRedaguoti_Click);
 			// 
 			// KategorijosRedagavimas
 			// 

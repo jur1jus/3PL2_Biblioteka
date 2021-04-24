@@ -51,6 +51,18 @@ namespace Services
 				}
 		}
 
+		public void AtnaujinkKategoriją(FormModels.Kategorija kategorija)
+		{
+			Domain.Letenlės.Kategorija dbKategorija = new Kategorija(kategorija.Id.Value, kategorija.Pavadinimas, kategorija.AmžiausCenzūra);
 
+			using (MySqlConnection connection = new(ConnString))
+			using (MySqlCommand command = new(dbKategorija.GeneruokUpdateKomandą(), connection))
+				try {
+					connection.Open();
+					command.ExecuteNonQuery();
+				} catch {
+					throw;
+				}
+		}
 	}
 }
