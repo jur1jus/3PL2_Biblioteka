@@ -29,5 +29,25 @@ namespace Presentation
 			Services.FormModels.Kategorija kategorija = new(null, pavadinimas, amžiausCenzūra);
 			_service.SukurkKategorija(kategorija);
 		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtAmžiausCenzūra_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtPavadinimas_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

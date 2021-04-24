@@ -1,7 +1,7 @@
 ﻿
 namespace Presentation
 {
-	partial class NaujaKategorija
+	partial class KategorijosRedagavimas
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,71 +28,75 @@ namespace Presentation
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.txtId = new System.Windows.Forms.TextBox();
 			this.txtPavadinimas = new System.Windows.Forms.TextBox();
 			this.txtAmžiausCenzūra = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.btnSukurti = new System.Windows.Forms.Button();
+			this.btnRedaguoti = new System.Windows.Forms.Button();
 			this.SuspendLayout();
+			// 
+			// txtId
+			// 
+			this.txtId.Location = new System.Drawing.Point(297, 5);
+			this.txtId.Name = "txtId";
+			this.txtId.Size = new System.Drawing.Size(18, 23);
+			this.txtId.TabIndex = 0;
 			// 
 			// txtPavadinimas
 			// 
-			this.txtPavadinimas.Location = new System.Drawing.Point(131, 27);
+			this.txtPavadinimas.Location = new System.Drawing.Point(113, 18);
 			this.txtPavadinimas.Name = "txtPavadinimas";
-			this.txtPavadinimas.Size = new System.Drawing.Size(207, 23);
-			this.txtPavadinimas.TabIndex = 0;
-			this.txtPavadinimas.TextChanged += new System.EventHandler(this.txtPavadinimas_TextChanged);
+			this.txtPavadinimas.Size = new System.Drawing.Size(178, 23);
+			this.txtPavadinimas.TabIndex = 1;
 			// 
 			// txtAmžiausCenzūra
 			// 
-			this.txtAmžiausCenzūra.Location = new System.Drawing.Point(131, 56);
+			this.txtAmžiausCenzūra.Location = new System.Drawing.Point(113, 47);
 			this.txtAmžiausCenzūra.Name = "txtAmžiausCenzūra";
-			this.txtAmžiausCenzūra.Size = new System.Drawing.Size(207, 23);
-			this.txtAmžiausCenzūra.TabIndex = 1;
-			this.txtAmžiausCenzūra.TextChanged += new System.EventHandler(this.txtAmžiausCenzūra_TextChanged);
+			this.txtAmžiausCenzūra.Size = new System.Drawing.Size(178, 23);
+			this.txtAmžiausCenzūra.TabIndex = 2;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(21, 30);
+			this.label1.Location = new System.Drawing.Point(12, 21);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(74, 15);
-			this.label1.TabIndex = 2;
+			this.label1.TabIndex = 3;
 			this.label1.Text = "Pavadinimas";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(21, 59);
+			this.label2.Location = new System.Drawing.Point(10, 50);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(96, 15);
-			this.label2.TabIndex = 3;
+			this.label2.TabIndex = 4;
 			this.label2.Text = "Amžiaus cenzūra";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
-			// btnSukurti
+			// btnRedaguoti
 			// 
-			this.btnSukurti.Location = new System.Drawing.Point(131, 86);
-			this.btnSukurti.Name = "btnSukurti";
-			this.btnSukurti.Size = new System.Drawing.Size(75, 23);
-			this.btnSukurti.TabIndex = 4;
-			this.btnSukurti.Text = "Sukurti";
-			this.btnSukurti.UseVisualStyleBackColor = true;
-			this.btnSukurti.Click += new System.EventHandler(this.btnSukurti_Click);
+			this.btnRedaguoti.Location = new System.Drawing.Point(113, 76);
+			this.btnRedaguoti.Name = "btnRedaguoti";
+			this.btnRedaguoti.Size = new System.Drawing.Size(75, 23);
+			this.btnRedaguoti.TabIndex = 5;
+			this.btnRedaguoti.Text = "Redaguoti";
+			this.btnRedaguoti.UseVisualStyleBackColor = true;
 			// 
-			// NaujaKategorija
+			// KategorijosRedagavimas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(350, 122);
-			this.Controls.Add(this.btnSukurti);
+			this.ClientSize = new System.Drawing.Size(327, 125);
+			this.Controls.Add(this.btnRedaguoti);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtAmžiausCenzūra);
 			this.Controls.Add(this.txtPavadinimas);
-			this.Name = "NaujaKategorija";
-			this.Text = "NaujaKategorija";
+			this.Controls.Add(this.txtId);
+			this.Name = "KategorijosRedagavimas";
+			this.Text = "KategorijosRedagavimas";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -100,10 +104,11 @@ namespace Presentation
 
 		#endregion
 
+		private System.Windows.Forms.TextBox txtId;
 		private System.Windows.Forms.TextBox txtPavadinimas;
 		private System.Windows.Forms.TextBox txtAmžiausCenzūra;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button btnSukurti;
+		private System.Windows.Forms.Button btnRedaguoti;
 	}
 }

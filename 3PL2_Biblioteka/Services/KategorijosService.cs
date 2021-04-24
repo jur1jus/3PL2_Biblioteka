@@ -24,7 +24,7 @@ namespace Services
 					while (reader.Read()) {
 
 						var id = reader.GetInt32("Id");
-						var pavadinimas = reader.GetString("Pavadinimas");
+						var pavadinimas = !reader.IsDBNull(1) ? reader.GetString("Pavadinimas") : null;
 						var amžiausCenzūra = !reader.IsDBNull(2) ? reader.GetInt32("AmžiausCenzūra") : (int?)null;
 
 						Kategorija kategorija = new(id, pavadinimas, amžiausCenzūra);
@@ -50,5 +50,7 @@ namespace Services
 					throw;
 				}
 		}
+
+
 	}
 }

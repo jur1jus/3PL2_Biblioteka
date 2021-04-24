@@ -40,5 +40,12 @@ namespace Presentation
 			NaujaKategorija naujaKategorija = new();
 			naujaKategorija.ShowDialog();
 		}
+
+		private void dataGridViewKategorijos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 3) {
+				MessageBox.Show("Redaguok");
+			}
+		}
 	}
 }
