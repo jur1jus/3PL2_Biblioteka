@@ -27,6 +27,11 @@ namespace Domain.Letenlės
 			AmžiausCenzūra = amžiausCenzūra;
 		}
 
+		public Kategorija(int id)
+		{
+			Id = id;
+		}
+
 		public string GeneruokInsertKomandą()
 		{
 			var pavadinimas = string.IsNullOrEmpty(Pavadinimas) ? "NULL" : $"'{Pavadinimas}'";
@@ -41,6 +46,13 @@ namespace Domain.Letenlės
 			var amžiausCenzūra = !AmžiausCenzūra.HasValue ? "NULL" : AmžiausCenzūra.ToString();
 
 			return $"UPDATE Kategorijos SET Pavadinimas = {pavadinimas}, AmžiausCenzūra = {amžiausCenzūra} WHERE Id = {id}";
+		}
+
+		public string GeneruokNaikinimoKomandą()
+		{
+			var id = Id;
+
+			return $"UPDATE Kategorijos SET ArPanaikinta = 1 WHERE Id = {id}";
 		}
 	}
 }

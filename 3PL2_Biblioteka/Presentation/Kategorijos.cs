@@ -48,12 +48,24 @@ namespace Presentation
 				var pavadinimas = dataGridViewKategorijos["clmnPavadinimas", e.RowIndex].Value?.ToString();
 				var amžiausCenzūra = dataGridViewKategorijos["clmnAmžiausCenzūra", e.RowIndex].Value is not null ? (int?)dataGridViewKategorijos["clmnAmžiausCenzūra", e.RowIndex].Value : (int?)null;
 
-				Services.FormModels.Kategorija kategorija = new(id, pavadinimas, amžiausCenzūra);
+				Services.FormModels.Kategorija kategorija = new Services.FormModels.Kategorija(id, pavadinimas, amžiausCenzūra);
 
 				KategorijosRedagavimas kategorijosRedagavimas = new(kategorija);
 				kategorijosRedagavimas.FormClosed += KategorijosRedagavimas_FormClosed;
 				kategorijosRedagavimas.Show();
 			}
+
+			if (e.ColumnIndex == 4) {
+				var id = (int)dataGridViewKategorijos["clmnId", e.RowIndex].Value;
+
+				var arNoriIštrinti = MessageBox.Show("Ar tikrai norite panaikinti įrašą?", "Įrašo naikinimas", MessageBoxButtons.YesNo);
+
+				if (arNoriIštrinti == DialogResult.Yes) {
+					_kategorijosService.NaikinkKategoriją(id);
+					UžpildykDataGridView();
+				}
+			}
+			
 		}
 
 		private void KategorijosRedagavimas_FormClosed(object sender, FormClosedEventArgs e)

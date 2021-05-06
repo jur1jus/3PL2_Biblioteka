@@ -29,11 +29,12 @@ namespace Presentation
 		private void InitializeComponent()
 		{
 			this.dataGridViewKategorijos = new System.Windows.Forms.DataGridView();
-			this.btnNaujaKategorija = new System.Windows.Forms.Button();
 			this.clmnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.clmnPavadinimas = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.clmnAmžiausCenzūra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.clmnRedagavimas = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.clmnNaikinimas = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.btnNaujaKategorija = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorijos)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -46,24 +47,15 @@ namespace Presentation
             this.clmnId,
             this.clmnPavadinimas,
             this.clmnAmžiausCenzūra,
-            this.clmnRedagavimas});
-			this.dataGridViewKategorijos.Location = new System.Drawing.Point(12, 84);
+            this.clmnRedagavimas,
+            this.clmnNaikinimas});
+			this.dataGridViewKategorijos.Location = new System.Drawing.Point(12, 154);
 			this.dataGridViewKategorijos.Name = "dataGridViewKategorijos";
 			this.dataGridViewKategorijos.ReadOnly = true;
 			this.dataGridViewKategorijos.RowTemplate.Height = 25;
-			this.dataGridViewKategorijos.Size = new System.Drawing.Size(374, 168);
+			this.dataGridViewKategorijos.Size = new System.Drawing.Size(476, 168);
 			this.dataGridViewKategorijos.TabIndex = 0;
 			this.dataGridViewKategorijos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKategorijos_CellContentClick);
-			// 
-			// btnNaujaKategorija
-			// 
-			this.btnNaujaKategorija.Location = new System.Drawing.Point(259, 12);
-			this.btnNaujaKategorija.Name = "btnNaujaKategorija";
-			this.btnNaujaKategorija.Size = new System.Drawing.Size(127, 23);
-			this.btnNaujaKategorija.TabIndex = 1;
-			this.btnNaujaKategorija.Text = "Nauja kategorija";
-			this.btnNaujaKategorija.UseVisualStyleBackColor = true;
-			this.btnNaujaKategorija.Click += new System.EventHandler(this.btnNaujaKategorija_Click);
 			// 
 			// clmnId
 			// 
@@ -93,11 +85,29 @@ namespace Presentation
 			this.clmnRedagavimas.Text = "Redaguoti";
 			this.clmnRedagavimas.UseColumnTextForButtonValue = true;
 			// 
+			// clmnNaikinimas
+			// 
+			this.clmnNaikinimas.HeaderText = "";
+			this.clmnNaikinimas.Name = "clmnNaikinimas";
+			this.clmnNaikinimas.ReadOnly = true;
+			this.clmnNaikinimas.Text = "Naikinti";
+			this.clmnNaikinimas.UseColumnTextForButtonValue = true;
+			// 
+			// btnNaujaKategorija
+			// 
+			this.btnNaujaKategorija.Location = new System.Drawing.Point(361, 12);
+			this.btnNaujaKategorija.Name = "btnNaujaKategorija";
+			this.btnNaujaKategorija.Size = new System.Drawing.Size(127, 23);
+			this.btnNaujaKategorija.TabIndex = 1;
+			this.btnNaujaKategorija.Text = "Nauja kategorija";
+			this.btnNaujaKategorija.UseVisualStyleBackColor = true;
+			this.btnNaujaKategorija.Click += new System.EventHandler(this.btnNaujaKategorija_Click);
+			// 
 			// Kategorijos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(398, 264);
+			this.ClientSize = new System.Drawing.Size(501, 334);
 			this.Controls.Add(this.btnNaujaKategorija);
 			this.Controls.Add(this.dataGridViewKategorijos);
 			this.Name = "Kategorijos";
@@ -115,5 +125,6 @@ namespace Presentation
 		private System.Windows.Forms.DataGridViewTextBoxColumn clmnPavadinimas;
 		private System.Windows.Forms.DataGridViewTextBoxColumn clmnAmžiausCenzūra;
 		private System.Windows.Forms.DataGridViewButtonColumn clmnRedagavimas;
+		private System.Windows.Forms.DataGridViewButtonColumn clmnNaikinimas;
 	}
 }

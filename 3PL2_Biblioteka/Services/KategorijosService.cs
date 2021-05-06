@@ -15,7 +15,7 @@ namespace Services
 			List<Kategorija> kategorijosResult = new();
 
 			using (MySqlConnection connection = new(ConnString))
-			using (MySqlCommand command = new("SELECT * FROM Kategorijos", connection))
+			using (MySqlCommand command = new("SELECT * FROM Kategorijos WHERE ArPanaikinta = 0", connection))
 				try {
 					connection.Open();
 
@@ -61,6 +61,20 @@ namespace Services
 					connection.Open();
 					command.ExecuteNonQuery();
 				} catch {
+					throw;
+				}
+		}
+
+		public void NaikinkKategoriją(int id)
+		{
+			Domain.Letenlės.Kategorija dbKategorija = new(id);
+
+			using (MySqlConnection connection = new(ConnString))
+			using (MySqlCommand command = new(dbKategorija.GeneruokNaikinimoKomandą(), connection))
+				try {
+					connection.Open();
+					command.ExecuteNonQuery();
+				} catch  {
 					throw;
 				}
 		}
