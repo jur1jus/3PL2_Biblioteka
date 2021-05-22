@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace Services.FormModels
 {
-	public class Klientas
-	{
-	}
+	public record Klientas(int? Id, string Vardas, string Pavardė, string KotelėsId, byte[] PaveiksliukoBytes);
 }
