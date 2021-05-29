@@ -28,6 +28,15 @@ namespace Domain.Letenlės
 			NuotraukosPath = nuotraukosPath;
 		}
 
+		public Klientas(int id, string vardas, string pavardė, string kortelėsId, string nuotraukosPath)
+		{
+			Id = id;
+			Vardas = vardas;
+			Pavardė = pavardė;
+			KortelėsId = kortelėsId;
+			NuotraukosPath = nuotraukosPath;
+		}
+
 		public string GeneruokInsertKomandą()
 		{
 			var vardas = string.IsNullOrEmpty(Vardas) ? "NULL" : $"'{Vardas}'";
@@ -36,6 +45,17 @@ namespace Domain.Letenlės
 			var nuotraukosPath = string.IsNullOrEmpty(NuotraukosPath) ? "NULL" : $"'{NuotraukosPath}'";
 
 			return $"INSERT INTO Klientai (Vardas, Pavardė, KortelėsId, NuotraukosPath) VALUES ({vardas}, {pavardė}, {kortelėsId}, {nuotraukosPath})";
+		}
+
+		public string GeneruokUpdateKomandą()
+		{
+			var id = Id;
+			var vardas = string.IsNullOrEmpty(Vardas) ? "NULL" : $"'{Vardas}'";
+			var pavardė = string.IsNullOrEmpty(Pavardė) ? "NULL" : $"'{Pavardė}'";
+			var kortelėsId = string.IsNullOrEmpty(KortelėsId) ? "NULL" : $"'{KortelėsId}'";
+			var nuotraukosPath = string.IsNullOrEmpty(NuotraukosPath) ? "NULL" : $"'{NuotraukosPath}'";
+
+			return $"UPDATE Klientai SET Vardas = {vardas}, Pavardė = {pavardė}, kortelėsId = {kortelėsId}, NuotraukosPath = {nuotraukosPath} where Id = {id}";
 		}
 	}
 }

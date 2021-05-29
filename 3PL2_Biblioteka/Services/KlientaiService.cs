@@ -43,10 +43,19 @@ namespace Services
 
 			var paveiksliukoPath = SaugokPaveikliuką(klientas.PaveiksliukoBytes, paveiklsiukoPavadinimas);
 
-			Domain.Letenlės.Klientas klientasDb = new(klientas.Vardas, klientas.Pavardė, klientas.KotelėsId, paveiksliukoPath);
+			Domain.Letenlės.Klientas klientasDb = null;
+			var komanda = string.Empty;
+
+			if (!klientas.Id.HasValue) {
+				klientasDb = new(klientas.Vardas, klientas.Pavardė, klientas.KotelėsId, paveiksliukoPath);
+				komanda = klientasDb.GeneruokInsertKomandą();
+			} else {
+				klientasDb = new(klientas.Id.Value, klientas.Vardas, klientas.Pavardė, klientas.KotelėsId, paveiksliukoPath);
+				komanda = klientasDb.GeneruokUpdateKomandą();
+			}
 
 			using (MySqlConnection connection = new(ConnString)) {
-				using (MySqlCommand command = new(klientasDb.GeneruokInsertKomandą(), connection)) {
+				using (MySqlCommand command = new(komanda, connection)) {
 					connection.Open();
 
 					command.ExecuteNonQuery();
